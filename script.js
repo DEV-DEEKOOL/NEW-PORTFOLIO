@@ -63,3 +63,55 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    // Clear previous error messages
+    document.getElementById('nameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('phoneError').textContent = '';
+    document.getElementById('messageError').textContent = '';
+
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    let valid = true;
+
+    // Validate Name
+    if (name === '') {
+        document.getElementById('nameError').textContent = 'Name is required.';
+        valid = false;
+    }
+
+    // Validate Email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === '') {
+        document.getElementById('emailError').textContent = 'Email is required.';
+        valid = false;
+    } else if (!emailPattern.test(email)) {
+        document.getElementById('emailError').textContent = 'Enter a valid email address.';
+        valid = false;
+    }
+
+    // Validate Phone (Optional: Add more specific validation as needed)
+    if (phone === '') {
+        document.getElementById('phoneError').textContent = 'Phone number is required.';
+        valid = false;
+    } else if (!/^\d{10}$/.test(phone)) {
+        document.getElementById('phoneError').textContent = 'Enter a valid phone number.';
+        valid = false;
+    }
+
+    // Validate Message
+    if (message === '') {
+        document.getElementById('messageError').textContent = 'Message cannot be empty.';
+        valid = false;
+    }
+
+    // Prevent form submission if validation fails
+    if (!valid) {
+        event.preventDefault();
+    }
+});

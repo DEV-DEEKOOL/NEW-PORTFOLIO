@@ -64,7 +64,7 @@
     .hero {
         justify-content: center;
         color: #fff;
-        background-image: radial-gradient(circle, rgb(15 14 14 / 30%), rgb(102 96 96 / 40%), rgb(163 160 160 / 16%)), url('./Images/heroImg3.avif')
+        background-image: radial-gradient(circle, rgb(15 14 14 / 30%), rgb(102 96 96 / 40%), rgb(163 160 160 / 16%)), url('./Assets/img/pexels-negativespace-92904.jpg')
     }
     .navbar {
         z-index: 1;
@@ -111,6 +111,7 @@
 
     .about {
         flex-direction: column;
+        text-align: center;
     }
 
     .about .about-text {
@@ -123,23 +124,33 @@
         padding: 1rem;
     }
 
-    .services {
+    #services {
         padding: 0;
-    }
-
-    .my-row {
+        height: 110vh;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
         flex-direction: column;
-        margin: 2rem 0;
-        gap: 1rem;
+        justify-content: flex-start;
+        padding-top: 3rem;
+    
+    }
+    .service-container {
+        display: flex;
+        justify-content: center;
+    }
+    .services-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    .services-block span {
+         font-weight: 600;
+         font-size: 1.2rem;
     }
 
-    .my-row .my-col {
-        text-align: center;
-        width: 100%;
-    }
+  
+    
 
     .contact {
         padding: 0;
@@ -148,11 +159,13 @@
     .contact-content {
         flex-direction: column;
         align-items: center;
+        text-align: center;
         gap: 2rem;
+        width: 80%;
     }
 
     .contact-form-container {
-        width: 80%;
+        width: 100%;
     }
 
     .contact-form .form-controls {
@@ -163,9 +176,6 @@
         width: 100%;
     }
 
-    .contact-details {
-        width: 80%;
-    }
 
     .footer-menu {
         padding: 0 2rem;
